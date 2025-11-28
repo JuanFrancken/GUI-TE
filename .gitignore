@@ -1,0 +1,10 @@
+# Archivos de la compilación/despliegue
+/dist
+/build
+
+# Directorio de dependencias
+/node_modules
+
+# Archivos de configuración locales
+.env
+.env.local
