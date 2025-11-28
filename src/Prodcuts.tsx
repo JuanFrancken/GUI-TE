@@ -24,7 +24,6 @@ interface ProductFunctions {
     crearProducto: (nombre: string, descripcion: string, sku: string, categoria: string, precio: number, precioCoste: number, stockActual: number, stockMinimo: number, stockMaximo: number) => void;
     eliminarProducto: (id: number) => void;
     editarProducto: (editado: Product) => void;
-    // Ya corregido para no esperar argumentos
     traerDeApi: () => void;
 }
 
@@ -57,7 +56,6 @@ export const ProductProvider: React.FC<{ children: ReactNode }> = ({ children })
             max_stock_level: stockMaximo,
         }
         try {
-            // Se llama a la API para crear el producto y se recibe la respuesta con el ID real
             const productFromApi = await createProductsApi(newProduct);
             if (productFromApi) {
 
@@ -70,7 +68,6 @@ export const ProductProvider: React.FC<{ children: ReactNode }> = ({ children })
     }
 
     async function eliminarProducto(id: number) {
-        // Asume que también deberías llamar a una API de eliminación aquí
         setProducts(anterior => anterior.filter(p => p.id !== id));
         try{
             await eliminarDeApi(id);

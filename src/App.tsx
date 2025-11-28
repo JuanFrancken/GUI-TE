@@ -63,7 +63,7 @@ function InitialLoader() {
     }, [traerDeApi, products.length, token]);
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/GUI-TE">
             <RootContent /> 
         </BrowserRouter>
     );
